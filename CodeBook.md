@@ -3,8 +3,8 @@ data/tidy_set.txt
 
 Output contains one row for each pair of activity and subject.
 Columns:
-activity - one of performed activities
-subject - identifier of subject (person)
+- activity - one of performed activities
+- subject - identifier of subject (person)
 
 Rest of columns contain statistics all measruments for given (activity, subject) pair.
 Columns *_mean_* contain mean value of all signals for given (activity, subject) pair.
@@ -15,23 +15,23 @@ Columns starting with 't' contain data for time domain signals.
 Columns starting with 'f' contain data for frequency domain signals.
 
 There are following measurements in columns:
-tBodyAcc
-tGravityAcc
-tBodyAccJerk
-tBodyGyro
-tBodyGyroJerk
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc
-fBodyAccJerk
-fBodyGyro
-fBodyAccMag
-fBodyBodyAccJerkMag
-fBodyBodyGyroMag
-fBodyBodyGyroJerkMag
+- tBodyAcc
+- tGravityAcc
+- tBodyAccJerk
+- tBodyGyro
+- tBodyGyroJerk
+- tBodyAccMag
+- tGravityAccMag
+- tBodyAccJerkMag
+- tBodyGyroMag
+- tBodyGyroJerkMag
+- fBodyAcc
+- fBodyAccJerk
+- fBodyGyro
+- fBodyAccMag
+- fBodyBodyAccJerkMag
+- fBodyBodyGyroMag
+- fBodyBodyGyroJerkMag
 
 Cleaning data
 =============
