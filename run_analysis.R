@@ -1,9 +1,11 @@
+library(plyr)
+
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 dataDir <- "./data"
 zipFile <- paste(dataDir, "dataset.zip", sep = "/")
 dirName <- paste(dataDir, "UCI HAR Dataset", sep = "/")
 
-## Prepare data directory, download zip file and extract it.
+# Prepare data directory, download zip file and extract it.
 if (!file.exists(dataDir)) {
   dir.create(dataDir)
 }
@@ -20,11 +22,9 @@ readDataset <- function(dataset) {
   subjects <- read.table(paste(dirName, dataset, 
                                paste("subject_", dataset, ".txt", sep = ""), sep = "/"),
                          col.names = c("subject"))
-  #names(subjects) <- "subject"
   results <- read.table(paste(dirName, dataset,
                               paste("y_", dataset, ".txt", sep = ""), sep = "/"),
                         col.names = c("activity"))
-  #names(results) <- "name"
   cbind(subjects, results, data)
 }
 
@@ -46,9 +46,7 @@ datasets$activity <- activityMap[datasets$activity]
 
 # 4. Appropriately label the data set with descriptive variable names
 featuresMap <- setNames(as.character(features$feature), features$colname)
-names(datasets)[-2:-1] <- featuresMap[names(datasets)[-2:-1]] 
-# Different way of doing this would be to use rename form plyr library.
-# datasets <- rename(datasets, featuresMap)
+datasets <- rename(datasets, featuresMap)
 
 # datasets is a tidy data set at this moment.
 
